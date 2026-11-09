@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+class Client
+class ClockFacade
+interface BaseDigitalClock
+class DigitalClockAdapter
+interface BaseAnalogClock
+class AnalogClock
+class ClockFormatter
+class ClockHistory
+
+Client --> ClockFacade
+ClockFacade --> BaseDigitalClock
+ClockFacade --> ClockFormatter
+ClockFacade --> ClockHistory
+DigitalClockAdapter ..|> BaseDigitalClock
+DigitalClockAdapter --> BaseAnalogClock
+AnalogClock ..|> BaseAnalogClock
+
+@enduml
